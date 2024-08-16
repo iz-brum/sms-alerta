@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3; url=sms:+551140199?body=Envie%20seu%20CEP">
+    <title>Enviar CEP via SMS</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f5;
+            color: #333;
+            text-align: center;
+            overflow: hidden;
+        }
+        p {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        img.enlarged {
+            max-width: 100%;
+            max-height: 100%;
+            transform: scale(1.25);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        #retry {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function redirectToSMS() {
+            window.location.href = "sms:+551140199?body=Envie%20seu%20CEP";
+        }
+
+        function toggleImageSize() {
+            var img = document.querySelector('img');
+            img.classList.toggle('enlarged');
+        }
+
+        setTimeout(function() {
+            document.getElementById("retry").style.display = "block";
+        }, 5000);  // Exibe a mensagem e o botão após 5 segundos
+    </script>
+</head>
+<body>
+    <p>Redirecionando para o aplicativo de SMS...</p>
+    <div id="retry">
+        <p>Não conseguiu ser redirecionado? Tente novamente.</p>
+        <button onclick="redirectToSMS()">Enviar SMS</button>
+    </div>
+    <img src="sms.png" alt="Instruções de envio de SMS" onclick="toggleImageSize()">
+</body>
+</html>
