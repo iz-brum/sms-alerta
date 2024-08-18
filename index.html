@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Enviar CEP via SMS</title>
@@ -7,48 +8,53 @@
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-direction: column;
             height: 100vh;
-            margin: 0;
+            margin: 60px 0 0 0;
             background-color: #f0f0f5;
             color: #333;
             text-align: center;
-            padding: 20px; /* Adicionado padding para evitar que os elementos fiquem colados nas bordas da tela */
+            padding: 20px;
         }
+
         p {
-            font-size: 22px;
+            font-size: 1.8rem;
             font-weight: bold;
             width: 80%;
-            margin-bottom: 20px; /* Ajuste no espaçamento entre o texto e a imagem */
+            margin-bottom: 20px;
         }
+
         button {
             width: 80%;
-            padding: 12px 24px;
-            font-size: 1.6rem;
+            padding: 18px 24px;
+            font-size: 1.7rem;
             font-weight: bold;
             color: #fff;
             background-color: #007bff;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 20px; /* Espaçamento maior entre a imagem e o botão */
+            margin-top: 20px;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         img {
             max-width: 80%;
             height: auto;
-            margin-top: 10px; /* Menor margem superior para harmonizar com o texto */
-            margin-bottom: 20px; /* Espaçamento entre a imagem e o botão */
+            margin-top: 10px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         img.enlarged {
             max-width: 90%;
             max-height: 100%;
@@ -67,9 +73,11 @@
         }
     </script>
 </head>
+
 <body>
     <p>Leia o cartão abaixo. Depois, clique no botão para abrir o app de mensagens e enviar o SMS.</p>
     <img src="cad_sms_alertas.png" alt="Instruções de envio de SMS" onclick="toggleImageSize()">
     <button onclick="redirectToSMS()">Enviar SMS</button>
 </body>
+
 </html>
