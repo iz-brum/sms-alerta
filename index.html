@@ -33,7 +33,7 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             margin-bottom: 20px;
-            width: 80%;
+            width: 78%;
             text-align: center;
         }
 
@@ -71,6 +71,51 @@
             transform: scale(1.15);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+
+        .swal2-popup {
+            font-size: 1.6rem;
+            /* Tamanho do texto */
+            width: 40rem;
+            /* Largura da caixa */
+            max-width: 90%;
+            /* Garante que a largura não ultrapasse 90% da tela */
+            padding: 2rem;
+            /* Padding interno */
+        }
+
+        .swal2-title {
+            font-size: 2rem;
+            /* Tamanho do título */
+            margin-bottom: 1.5rem;
+            /* Espaço abaixo do título */
+        }
+
+        .swal2-html-container {
+            font-size: 1.5rem;
+            /* Tamanho do texto da mensagem */
+            margin-bottom: 2rem;
+            /* Espaço abaixo da mensagem */
+        }
+
+        .swal2-confirm {
+            font-size: 1.4rem;
+            /* Tamanho do botão de confirmação */
+            padding: 1rem 2rem;
+            /* Padding do botão */
+        }
+
+        .swal2-icon {
+            font-size: 3.5rem;
+            /* Tamanho do ícone */
+            margin: 0.5em auto .6em !important;
+            /* Espaço abaixo do ícone */
+        }
+
+        .swal2-icon-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
@@ -92,21 +137,33 @@
         function redirectToSMS() {
             var cep = document.getElementById('cep').value;
             if (cep && cep.length === 9) {
-                window.location.href = "sms:40199?body=" + encodeURIComponent(cep);
                 Swal.fire({
                     title: 'Mensagem Preparada!',
                     html: "Por favor, toque no botão com o ícone de '<i class='fa-regular fa-paper-plane'></i> ' no app de mensagens para enviar o CEP.",
                     icon: 'info',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        popup: 'swal2-popup',
+                        title: 'swal2-title',
+                        htmlContainer: 'swal2-html-container',
+                        confirmButton: 'swal2-confirm'
+                    }
+                }).then(() => {
+                    window.location.href = "sms:40199?body=" + encodeURIComponent(cep);
                 });
             } else {
                 Swal.fire({
                     title: 'CEP Inválido!',
                     html: "Por favor, insira um CEP válido no formato <strong>XXXXX-XXX</strong>. <br>Exemplo: <strong>12345-678</strong>",
                     icon: 'error',
-                    confirmButtonText: 'Tentar Novamente'
+                    confirmButtonText: 'Tentar Novamente',
+                    customClass: {
+                        popup: 'swal2-popup',
+                        title: 'swal2-title',
+                        htmlContainer: 'swal2-html-container',
+                        confirmButton: 'swal2-confirm'
+                    }
                 }).then(() => {
-                    // Limpa o campo de entrada de CEP quando o alerta é fechado
                     document.getElementById('cep').value = '';
                 });
             }
