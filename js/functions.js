@@ -102,7 +102,10 @@ function redirectToSMS() {
 function toggleImageSize() {
     var img = document.querySelector('img');
     img.classList.toggle('enlarged');
+    adjustImageSize(img);
+}
 
+function adjustImageSize(img) {
     if (img.classList.contains('enlarged')) {
         img.style.maxWidth = '100%'; // Ocupa toda a largura disponível
         img.style.height = 'auto';   // Mantém a proporção da altura
@@ -113,3 +116,9 @@ function toggleImageSize() {
         img.style.width = 'auto';
     }
 }
+
+// Adiciona um listener para ajustar a imagem quando a orientação do dispositivo mudar
+window.addEventListener('orientationchange', function() {
+    var img = document.querySelector('img');
+    adjustImageSize(img);
+});
