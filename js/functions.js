@@ -118,7 +118,15 @@ function adjustImageSize(img) {
 }
 
 // Adiciona um listener para ajustar a imagem quando a orientação do dispositivo mudar
-window.addEventListener('orientationchange', function() {
+window.addEventListener('orientationchange', function () {
+    var img = document.querySelector('img');
+    setTimeout(function () {
+        adjustImageSize(img);
+    }, 300);  // Delay para garantir que a mudança de orientação seja concluída
+});
+
+// Também ajusta quando a janela é redimensionada
+window.addEventListener('resize', function () {
     var img = document.querySelector('img');
     adjustImageSize(img);
 });
