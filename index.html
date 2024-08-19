@@ -11,7 +11,7 @@
 <body>
     <img src="imgs/sms_alerta_9_por_16.png" alt="Instruções de envio de SMS" onclick="toggleImageSize()">
     <p>Digite seu CEP e clique em 'Receber Alertas' para enviar o SMS.</p>
-    <input type="text" id="cep" placeholder="Digite seu CEP aqui">
+    <input type="text" id="cep" placeholder="Digite seu CEP aqui" maxlength="9" oninput="this.value = this.value.replace(/\D/g, '')">
     <button onclick="redirectToSMS()">Receber Alertas</button>
     <script src="js/functions.js"></script>
 </body>
