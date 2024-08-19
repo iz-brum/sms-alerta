@@ -41,10 +41,6 @@ function updateImage() {
     const imgSrc = images[orientation][ratio];  // Busca o caminho da imagem correspondente
     const imgElement = document.querySelector('img');  // Seleciona o elemento de imagem na página
     imgElement.src = imgSrc;  // Atualiza a fonte da imagem
-
-    // Atualiza o campo de informações com a proporção e o nome da imagem
-    const infoElement = document.getElementById('info');
-    infoElement.textContent = `Proporção: ${aspectRatio}, Imagem: ${imgSrc}`;
 }
 
 // Evento que dispara quando o conteúdo da página é carregado
@@ -94,7 +90,7 @@ function redirectToSMS() {
         });
     } else {
         Swal.fire({
-            title: 'CEP Inválido!',
+            title: 'CEP inválido!',
             html: "Por favor, insira um CEP válido no formato <strong>XXXXX-XXX</strong>. <br>Exemplo: <strong>12345-678</strong>",
             icon: 'error',
             confirmButtonText: 'Tentar Novamente',
