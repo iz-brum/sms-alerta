@@ -102,4 +102,14 @@ function redirectToSMS() {
 function toggleImageSize() {
     var img = document.querySelector('img');
     img.classList.toggle('enlarged');
+
+    if (img.classList.contains('enlarged')) {
+        img.style.maxWidth = '100%'; // Ocupa toda a largura disponível
+        img.style.height = 'auto';   // Mantém a proporção da altura
+        img.style.width = 'auto';    // Define a largura automaticamente para respeitar as proporções
+    } else {
+        img.style.maxWidth = '90%';  // Retorna ao tamanho padrão anterior
+        img.style.height = 'auto';
+        img.style.width = 'auto';
+    }
 }
