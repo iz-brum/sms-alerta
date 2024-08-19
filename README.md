@@ -12,12 +12,17 @@ Este projeto é uma página web simples e intuitiva que facilita o envio de SMS 
 
 Veja abaixo como a página se apresenta em diferentes dispositivos:
 
-<img src="imgs/2.png" alt="Exemplo de Interface 1" width="450" style="margin-left: 15px">
-<img src="imgs/4.png" alt="Exemplo de Interface 3" width="450">
+<table>
+  <tr>
+    <td align="center"><img src="imgs/2.png" alt="Exemplo de Interface 1" width="350"></td>
+    <td align="center"><img src="imgs/4.png" alt="Exemplo de Interface 3" width="350"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="imgs/3.png" alt="Exemplo de Interface 2" width="400"></td>
+  </tr>
+</table>
 
-<div style="text-align: center; margin-top: -85px">
-    <img src="imgs/3.png" alt="Exemplo de Interface 2" width="500">
-</div>
+
 
 ## Tecnologias Utilizadas
 
