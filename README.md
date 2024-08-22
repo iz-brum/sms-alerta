@@ -9,26 +9,29 @@ Este projeto é uma página web simples e intuitiva que facilita o envio de SMS 
 1. **Envio de CEP para monitoramento**: O usuário é guiado para enviar um SMS com o CEP da área que deseja monitorar para o número da Defesa Civil (40199).
 2. **Recebimento de confirmação**: Após o envio do SMS, o usuário recebe uma mensagem de confirmação de que o cadastro foi realizado com sucesso.
 3. **Consultas e cancelamentos via SMS**: O sistema permite que o usuário consulte os CEPs cadastrados ou cancele alertas para um CEP específico através de comandos enviados via SMS.
+4. **Modo Claro e Escuro**: A página permite ao usuário alternar entre o modo claro e escuro, proporcionando uma melhor experiência visual em diferentes condições de iluminação.
+5. **Ferramentas de Acessibilidade**: O projeto inclui suporte ao VLibras, oferecendo tradução automática de texto para a Língua Brasileira de Sinais (Libras). Além disso, a página é otimizada para leitores de tela, com descrições alternativas para imagens e uma estrutura semântica que facilita a navegação de usuários com deficiência visual.
 
 Veja abaixo como a página se apresenta em diferentes dispositivos:
 
 <table>
   <tr>
-    <td align="center"><img src="imgs/2.png" alt="Exemplo de Interface 1" width="350"></td>
-    <td align="center"><img src="imgs/4.png" alt="Exemplo de Interface 3" width="350"></td>
+    <td align="center"><img src="imgs/2.png" alt="Exemplo de Interface no iPhone" width="270"></td>
+    <td align="center"><img src="imgs/1.png" alt="Exemplo de Interface no MacBook" width="550"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><img src="imgs/3.png" alt="Exemplo de Interface 2" width="400"></td>
+    <td align="center"><img src="imgs/3.png" alt="Exemplo de Interface no iPad" width="400"></td>
+    <td align="center"><img src="imgs/4.png" alt="Exemplo de Interface no Xiaomi" width="250"></td>
   </tr>
 </table>
-
-
 
 ## Tecnologias Utilizadas
 
 - **HTML5**: Estrutura da página.
 - **CSS3**: Estilização e layout responsivo.
 - **JavaScript**: Funcionalidades interativas, como o redirecionamento para o aplicativo de mensagens SMS.
+- **VLibras**: Ferramenta de acessibilidade para tradução de texto em Língua Brasileira de Sinais.
+- **Modo Claro/Escuro**: Implementado para melhorar a experiência de uso em diferentes condições de iluminação.
 
 ## Como Utilizar
 
