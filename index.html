@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Enviar CEP via SMS</title>
 </head>
 
 <body>
-    <img src="imgs/sms_alerta_9_por_16.png" alt="Instruções de envio de SMS" onclick="toggleImageSize()">
-    <p>Digite seu CEP e clique em 'Receber Alertas' para enviar o SMS.</p>
-    <input type="text" id="cep" placeholder="Digite seu CEP aqui" maxlength="9" oninput="this.value = this.value.replace(/\D/g, '')">
-    <button onclick="redirectToSMS()">Receber Alertas</button>
-    <script src="js/functions.js"></script>
+    <!-- Cabeçalho da página -->
+    <header>
+        <img src="https://www.defesacivil.mt.gov.br/image/layout_set_logo?img_id=51588650&t=1724323582003"
+     alt="Logo Defesa Civil Do Mato Grosso" id="logo-defesa-civil" aria-label="Logo da Defesa Civil de Mato Grosso com texto 'Proteção e Defesa Civil' ao lado">
+        <p id="screen-reader-info" class="sr-only">
+            Esta página é acessível para usuários de leitores de tela. Use os controles de navegação do seu dispositivo
+            para explorar as opções.
+        </p>
+    </header>
+
+
+    <!-- Seção principal com conteúdo principal da página -->
+    <main>
+        <section aria-labelledby="instruction-title">
+            <h2 id="instruction-title" class="sr-only">Instruções</h2>
+            <img src="imgs/sms_alerta_9_por_16.png" id="instruction-image" alt="Instruções de envio de SMS"
+                onclick="toggleImageSize()" aria-label="Imagem ilustrativa sobre como enviar CEP via SMS">
+            <p id="instruction-text">Digite seu CEP e clique em 'Receber Alertas' para enviar o SMS.</p>
+
+            <div class="input-container">
+                <input type="text" id="cep" maxlength="9" aria-label="Campo para digitar o CEP"
+                    placeholder="Digite seu CEP aqui">
+                <label for="cep" id="cep-label">CEP</label>
+            </div>
+
+            <button onclick="redirectToSMS()" aria-label="Clique para receber alertas">Receber Alertas</button>
+        </section>
+    </main>
+
+    <!-- Início da configuração do VLibras e do Modo Escuro -->
+    <aside aria-label="Ferramentas de acessibilidade" id="accessibility-tools">
+        <button id="dark-mode-toggle" aria-label="Alternar modo escuro/claro">🌗</button>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+    </aside>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <!-- Fim da configuração do VLibras -->
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/darkModeToggle.js"></script>
+    <script src="js/imageHandler.js"></script>
+    <script src="js/formHandler.js"></script>
 </body>
 
 </html>
