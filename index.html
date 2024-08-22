@@ -21,51 +21,83 @@
         </p>
     </header>
 
-
     <!-- Seção principal com conteúdo principal da página -->
-    <main>
+    <main id="main-content">
         <section aria-labelledby="instruction-title">
-            <h2 id="instruction-title" class="sr-only">Instruções</h2>
-            <!-- Atualização da tag img com alt mais detalhado e descrição adicional para acessibilidade -->
-            <img src="imgs/sms_alerta_9_por_16.png" id="instruction-image" alt="Cadastrar-se para receber alertas por SMS: 
-            1. Envie um SMS para 40199 com o CEP da área que deseja monitorar, seja da sua casa ou de outro local. 
+            <h1 id="instruction-title" class="sr-only">Instruções</h1>
+
+            <div class="alert-container">
+                <h1>CADASTRE-SE PARA RECEBER ALERTAS POR SMS</h1>
+
+                <div class="alert-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Cadastre-se enviando por SMS para <strong>40199</strong> o CEP da área que deseja monitorar,
+                            seja
+                            da sua casa ou outro local.</p>
+                        <div class="icon">
+                            <img src="imgs/step1_icon.png" alt="Ícone de localização">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p>Você receberá uma mensagem confirmando que o cadastro foi realizado.</p>
+                        <div class="icon">
+                            <img src="imgs/step2_icon.png" alt="Ícone de confirmação">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-step step-3">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>Outras mensagens por SMS para <strong>40199</strong>:</p>
+                        <ul>
+                            <li>
+                                <div class="icon-text">
+                                    <img src="imgs/step3_icon.png" alt="Ícone de mensagens">
+                                    <span><strong>CONSULTAR</strong> para consultar CEPs cadastrados.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-text">
+                                    <img src="imgs/step4_icon.png" alt="Ícone de mensagens">
+                                    <span><strong>SAIR [CEP]</strong> para parar de receber alertas de um CEP.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <img src="imgs/sms_alerta_9_por_16.png" id="instruction-image" alt="Cadastrar-se para receber alertas por SMS: 
+            1. Envie um SMS para 40199 com o CEP da área que deseja monitorar, seja da sua casa ou outro local. 
             2. Você receberá uma mensagem confirmando que o cadastro foi realizado. 
             3. Outras mensagens por SMS para 40199: 
                - Envie 'CONSULTAR' para consultar os CEPs cadastrados. 
-               - Envie 'SAIR [CEP]' para parar de receber alertas de um CEP."
-             onclick="toggleImageSize()"
-                aria-label="Imagem com instruções de envio de SMS para cadastro de alertas.">
+               - Envie 'SAIR [CEP]' para parar de receber alertas de um CEP." onclick="showStepContent(1)"
+                onkeypress="showStepContent(1)"
+                aria-label="Imagem com instruções de envio de SMS para cadastro de alertas."> -->
 
-            <!-- Texto adicional visível apenas para leitores de tela -->
-            <div class="sr-only" aria-hidden="false">
-                <p>Cadastrar-se para receber alertas por SMS:</p>
-                <ol>
-                    <li>Envie um SMS para 40199 com o CEP da área que deseja monitorar, seja da sua casa ou outro local.
-                    </li>
-                    <li>Você receberá uma mensagem confirmando que o cadastro foi realizado.</li>
-                    <li>Outras mensagens por SMS para 40199:
-                        <ul>
-                            <li>Envie 'CONSULTAR' para consultar os CEPs cadastrados.</li>
-                            <li>Envie 'SAIR [CEP]' para parar de receber alertas de um CEP.</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-            <p id="instruction-text">Digite seu CEP e clique em 'Receber Alertas' para enviar o SMS.</p>
-
-            <div class="input-container">
-                <input type="text" id="cep" maxlength="9" aria-label="Campo para digitar o CEP"
-                    placeholder="Digite seu CEP aqui">
-                <label for="cep" id="cep-label">CEP</label>
-            </div>
-
-            <button onclick="redirectToSMS()" aria-label="Clique para receber alertas">Receber Alertas</button>
         </section>
+
+        <p id="instruction-text">Digite seu CEP e clique em 'Receber Alertas' para enviar o SMS.</p>
+
+        <div class="input-container">
+            <input type="text" id="cep" maxlength="9" aria-label="Campo para digitar o CEP"
+                placeholder="Digite seu CEP aqui">
+            <label for="cep" id="cep-label">CEP</label>
+        </div>
+
+        <button onclick="redirectToSMS()" aria-label="Clique para receber alertas" tabindex="0">Receber Alertas</button>
     </main>
 
-    <!-- Início da configuração do VLibras e do Modo Escuro -->
+    <!-- Ferramentas de acessibilidade e modo escuro -->
     <aside aria-label="Ferramentas de acessibilidade" id="accessibility-tools">
-        <button id="dark-mode-toggle" aria-label="Alternar modo escuro/claro">🌗</button>
+        <button id="dark-mode-toggle" aria-label="Alternar modo escuro/claro" tabindex="0">🌗</button>
         <div vw class="enabled">
             <div vw-access-button class="active"></div>
             <div vw-plugin-wrapper>
@@ -78,8 +110,6 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
-    <!-- Fim da configuração do VLibras -->
-
     <!-- Rodapé da página -->
     <footer>
         <p>&copy; 2024. Todos os direitos reservados.</p>
@@ -88,6 +118,22 @@
     <script src="js/darkModeToggle.js"></script>
     <script src="js/imageHandler.js"></script>
     <script src="js/formHandler.js"></script>
+
+    <script>
+        function showStepContent(step) {
+            // Oculta todos os conteúdos de passo
+            const steps = document.querySelectorAll('.step-content');
+            steps.forEach(stepDiv => {
+                stepDiv.setAttribute('aria-hidden', 'true');
+                stepDiv.classList.add('sr-only');
+            });
+
+            // Mostra o conteúdo do passo selecionado
+            const stepContent = document.getElementById(`step${step}-content`);
+            stepContent.setAttribute('aria-hidden', 'false');
+            stepContent.classList.remove('sr-only');
+        }
+    </script>
 </body>
 
 </html>
