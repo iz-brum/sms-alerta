@@ -1,8 +1,8 @@
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
-    /* Alinhamento centralizado */
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
@@ -10,15 +10,48 @@ body {
     background-color: #f0f0f5;
     color: #333;
     text-align: center;
-    padding: 30px 20px;
+    padding: 0px 20px;
+    font-size: 16px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#logo-defesa-civil {
+    max-width: 80%; /* Garante que a imagem não ultrapasse a largura da página */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 20px; /* Espaço entre a imagem e o restante do conteúdo */
+    box-shadow: none;
+}
+
+/* Screen Reader Info */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Main Section Styles */
+main {
+    font-size: 1rem;
 }
 
 p {
-    font-size: 2.2rem;
-    /* Ajuste do tamanho da fonte */
-    font-weight: bold;
-    width: 90%;
-    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 5vw;
+    width: 100%;
+    margin: 20px 0px;
 }
 
 input,
@@ -26,23 +59,21 @@ button,
 img {
     width: 90%;
     max-width: 100%;
-    /* Define uma largura máxima para garantir que todos os elementos tenham a mesma largura */
     box-sizing: border-box;
-    /* Garante que padding e border sejam incluídos na largura total */
 }
 
 input {
     padding: 20px;
-    font-size: 2rem;
+    font-size: 1.2rem;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
 button {
     padding: 20px 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: system-ui;
     font-weight: bold;
     color: #fff;
@@ -51,6 +82,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 2vw;
 }
 
 button:hover {
@@ -58,62 +90,134 @@ button:hover {
 }
 
 img {
+    margin-top: 10px;
     width: 90%;
     max-width: 90%;
     height: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.9s ease-in-out;
-    /* Aplica transição suave para todas as propriedades */
+    transition: all 0.7s ease-in-out;
 }
 
 img.enlarged {
     width: 100%;
-    /* Ocupa toda a largura da tela */
     max-width: 100%;
-    /* Ocupa toda a largura da tela */
     height: auto;
-    /* Mantém a proporção da altura */
 }
 
-.swal2-popup {
-    font-size: 2.4rem;
-    width: 52rem;
-    max-width: 90%;
-    padding: 2rem;
-}
-
-.swal2-title {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.swal2-html-container {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.swal2-confirm {
-    font-size: 2.3rem;
-    padding: 1.3rem 2rem
-}
-
-.swal2-icon {
-    font-size: 3.5rem;
-    margin: 0.5em auto .6em !important;
-}
-
-.swal2-icon-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#info {
+/* Input Container Styles */
+.input-container {
+    position: relative;
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: #555;
+    width: 90%; /* Define a largura do contêiner */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-container input {
+    width: 100%; /* Agora, o input ocupa 100% da largura do contêiner */
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out; /* Transição suave para o input */
+}
+
+.input-container label {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    transition: 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transição suave para a label */
+    font-size: 1.5rem;
+    color: #aaa;
+    pointer-events: none;
+    opacity: 0; /* Inicialmente, a label estará oculta */
+}
+
+.input-container input.focused + label,
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: 5px;
+    left: 15px;
+    font-size: 1rem;
+    color: #007bff;
+    opacity: 1; /* A label fica visível */
+}
+
+.input-container input:focus::placeholder {
+    opacity: 0; /* Faz com que o placeholder desapareça suavemente */
+}
+
+/* Accessibility Tools (Aside) Styles */
+#accessibility-tools {
+    position: fixed;
+    top: 32%;
+    right: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-50%);
+    z-index: 2147483647;
+}
+
+/* Dark Mode Toggle Button */
+button#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 2.1rem;
+    cursor: pointer;
+    margin: 100px 7px 0px;
+}
+
+/* VLibras Button Position */
+div[vw] {
+    position: relative;
+    z-index: 2147483647;
+}
+
+[vw-access-button] {
+    height: 47px !important; /* Garantir a altura desejada */
+    transition: all .4s ease !important;
+}
+
+[vw-access-button]:hover {
+    height: 51px !important; /* Garantir a altura desejada */
+}
+
+[vw-access-button] img {
+    height: 100%; /* Garante que ambas as imagens mantenham a altura correta */
+    width: auto; /* Mantém a proporção das imagens */
+    margin-right: 5px; /* Espaçamento entre as imagens, ajuste conforme necessário */
+}
+
+[vw-access-button] .pop-up {
+    display: inline-block;
+    height: 100%; /* Garante que a segunda imagem também mantenha a altura correta */
+    width: auto;
+    position: relative !important;
+}
+
+/* Footer Styles */
+footer>p {
+    font-size: small;
+    margin-bottom: 8px;
+}
+
+.swal2-show {
+    z-index: 99 !important;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f5;
+}
+
+body.dark-mode header {
+    background-color: #0000;
+}
+
+body.dark-mode button#dark-mode-toggle {
+    color: #f0f0f5;
 }
