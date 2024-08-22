@@ -13,7 +13,8 @@
     <!-- Cabeçalho da página -->
     <header>
         <img src="https://www.defesacivil.mt.gov.br/image/layout_set_logo?img_id=51588650&t=1724323582003"
-     alt="Logo Defesa Civil Do Mato Grosso" id="logo-defesa-civil" aria-label="Logo da Defesa Civil de Mato Grosso com texto 'Proteção e Defesa Civil' ao lado">
+            alt="Logo Defesa Civil Do Mato Grosso" id="logo-defesa-civil"
+            aria-label="Logo da Defesa Civil de Mato Grosso com texto 'Proteção e Defesa Civil' ao lado">
         <p id="screen-reader-info" class="sr-only">
             Esta página é acessível para usuários de leitores de tela. Use os controles de navegação do seu dispositivo
             para explorar as opções.
@@ -25,8 +26,31 @@
     <main>
         <section aria-labelledby="instruction-title">
             <h2 id="instruction-title" class="sr-only">Instruções</h2>
-            <img src="imgs/sms_alerta_9_por_16.png" id="instruction-image" alt="Instruções de envio de SMS"
-                onclick="toggleImageSize()" aria-label="Imagem ilustrativa sobre como enviar CEP via SMS">
+            <!-- Atualização da tag img com alt mais detalhado e descrição adicional para acessibilidade -->
+            <img src="imgs/sms_alerta_9_por_16.png" id="instruction-image" alt="Cadastrar-se para receber alertas por SMS: 
+            1. Envie um SMS para 40199 com o CEP da área que deseja monitorar, seja da sua casa ou de outro local. 
+            2. Você receberá uma mensagem confirmando que o cadastro foi realizado. 
+            3. Outras mensagens por SMS para 40199: 
+               - Envie 'CONSULTAR' para consultar os CEPs cadastrados. 
+               - Envie 'SAIR [CEP]' para parar de receber alertas de um CEP."
+             onclick="toggleImageSize()"
+                aria-label="Imagem com instruções de envio de SMS para cadastro de alertas.">
+
+            <!-- Texto adicional visível apenas para leitores de tela -->
+            <div class="sr-only" aria-hidden="false">
+                <p>Cadastrar-se para receber alertas por SMS:</p>
+                <ol>
+                    <li>Envie um SMS para 40199 com o CEP da área que deseja monitorar, seja da sua casa ou outro local.
+                    </li>
+                    <li>Você receberá uma mensagem confirmando que o cadastro foi realizado.</li>
+                    <li>Outras mensagens por SMS para 40199:
+                        <ul>
+                            <li>Envie 'CONSULTAR' para consultar os CEPs cadastrados.</li>
+                            <li>Envie 'SAIR [CEP]' para parar de receber alertas de um CEP.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
             <p id="instruction-text">Digite seu CEP e clique em 'Receber Alertas' para enviar o SMS.</p>
 
             <div class="input-container">
