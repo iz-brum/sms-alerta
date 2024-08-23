@@ -24,9 +24,12 @@ header {
 }
 
 #logo-defesa-civil {
-    max-width: 80%; /* Garante que a imagem não ultrapasse a largura da página */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-bottom: 20px; /* Espaço entre a imagem e o restante do conteúdo */
+    max-width: 80%;
+    /* Garante que a imagem não ultrapasse a largura da página */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    margin-bottom: 20px;
+    /* Espaço entre a imagem e o restante do conteúdo */
     box-shadow: none;
 }
 
@@ -57,7 +60,7 @@ p {
 input,
 button,
 img {
-    width: 90%;
+    width: 100%;
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -110,50 +113,58 @@ img.enlarged {
 .input-container {
     position: relative;
     margin-top: 20px;
-    width: 90%; /* Define a largura do contêiner */
+    width: 90%;
+    /* Define a largura do contêiner */
     margin-left: auto;
     margin-right: auto;
 }
 
 .input-container input {
-    width: 100%; /* Agora, o input ocupa 100% da largura do contêiner */
+    width: 100%;
+    /* Agora, o input ocupa 100% da largura do contêiner */
     padding: 20px;
     font-size: 1.5rem;
     border-radius: 5px;
     border: 1px solid #ccc;
-    transition: all 0.3s ease-in-out; /* Transição suave para o input */
+    transition: all 0.3s ease-in-out;
+    /* Transição suave para o input */
 }
 
 .input-container label {
     position: absolute;
     top: 20px;
     left: 10px;
-    transition: 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transição suave para a label */
+    transition: 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    /* Transição suave para a label */
     font-size: 1.5rem;
     color: #aaa;
     pointer-events: none;
-    opacity: 0; /* Inicialmente, a label estará oculta */
+    opacity: 0;
+    /* Inicialmente, a label estará oculta */
 }
 
-.input-container input.focused + label,
-.input-container input:focus + label,
-.input-container input:not(:placeholder-shown) + label {
+.input-container input.focused+label,
+.input-container input:focus+label,
+.input-container input:not(:placeholder-shown)+label {
     top: 7px;
     left: 9px;
     font-size: 1rem;
     color: #007bff;
-    opacity: 1; /* A label fica visível */
+    opacity: 1;
+    /* A label fica visível */
 }
 
 .input-container input:focus::placeholder {
-    opacity: 0; /* Faz com que o placeholder desapareça suavemente */
+    opacity: 0;
+    /* Faz com que o placeholder desapareça suavemente */
 }
 
 /* Accessibility Tools (Aside) Styles */
 #accessibility-tools {
     position: fixed;
     top: 32%;
-    right: 5px; /* Ajusta a posição para evitar que fique fora da tela */
+    right: 5px;
+    /* Ajusta a posição para evitar que fique fora da tela */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,23 +188,29 @@ div[vw] {
 }
 
 [vw-access-button] {
-    height: 47px !important; /* Garantir a altura desejada */
+    height: 47px !important;
+    /* Garantir a altura desejada */
     transition: all .4s ease !important;
 }
 
 [vw-access-button]:hover {
-    height: 51px !important; /* Garantir a altura desejada */
+    height: 51px !important;
+    /* Garantir a altura desejada */
 }
 
 [vw-access-button] img {
-    height: 100%; /* Garante que ambas as imagens mantenham a altura correta */
-    width: auto; /* Mantém a proporção das imagens */
-    margin-right: 5px; /* Espaçamento entre as imagens, ajuste conforme necessário */
+    height: 100%;
+    /* Garante que ambas as imagens mantenham a altura correta */
+    width: auto;
+    /* Mantém a proporção das imagens */
+    margin-right: 5px;
+    /* Espaçamento entre as imagens, ajuste conforme necessário */
 }
 
 [vw-access-button] .pop-up {
     display: inline-block;
-    height: 100%; /* Garante que a segunda imagem também mantenha a altura correta */
+    height: 100%;
+    /* Garante que a segunda imagem também mantenha a altura correta */
     width: auto;
     left: -5px !important;
     position: relative !important;
@@ -253,7 +270,8 @@ body.dark-mode button#dark-mode-toggle {
 }
 
 .alert-step.step-3 {
-    margin-bottom: 0; /* Altere para o valor desejado */
+    margin-bottom: 0;
+    /* Altere para o valor desejado */
 }
 
 .step-number {
@@ -280,7 +298,8 @@ body.dark-mode button#dark-mode-toggle {
 
 .step-content p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .step-content ul {
@@ -301,7 +320,6 @@ body.dark-mode button#dark-mode-toggle {
 .icon img {
     max-width: 50px;
     height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
 
@@ -315,4 +333,282 @@ body.dark-mode button#dark-mode-toggle {
     margin-right: 10px;
     max-width: 70px;
     height: auto;
+}
+
+/* Media queries para dispositivos pequenos (telefones) */
+@media (max-width: 600px) {
+    .alert-container {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .alert-step {
+        padding: 15px;
+    }
+
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    .step-content {
+        margin: 0 0 0 10px;
+        font-size: 0.8rem;
+    }
+
+    .icon img {
+        max-width: 45px;
+        box-shadow: none;
+    }
+
+    .icon-text img {
+        max-width: 65px;
+        box-shadow: none;
+    }
+}
+
+/* Media queries para dispositivos médios (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .alert-container {
+        padding: 25px;
+        font-size: 16px;
+        max-width: 80vw;
+        margin: auto;
+    }
+
+    .alert-step {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 3px solid #1976d2;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .step-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .step-content p.step-title {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .step-content p {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    .icon img {
+        max-width: 65px;
+        box-shadow: none;
+    }
+
+    .icon-text-wrapper {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .icon-text {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+    }
+
+    .icon-text img {
+        max-width: 100px;
+        margin-right: 10px;
+        box-shadow: none;
+    }
+
+    .icon-text span {
+        font-size: 1rem;
+    }
+
+    p#instruction-text {
+        font-weight: 700;
+        font-size: 2vw;
+        width: 100%;
+        margin: 30px 0 20px;
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .input-container input {
+        width: 65%;
+        margin-right: 2%;
+        box-sizing: border-box;
+    }
+
+    .input-container button {
+        width: 33%;
+        padding: 18px 0;
+        box-sizing: border-box;
+        margin-bottom: 1vw;
+    }
+
+    .input-container input.focused+label,
+    .input-container input:focus+label,
+    .input-container input:not(:placeholder-shown)+label {
+        top: 25%;
+        left: 20px;
+        font-size: 1.2rem;
+    }
+
+    footer>p {
+        font-size: medium;
+    }
+}
+
+
+/* Media queries para dispositivos grandes (laptops e desktops) */
+@media (min-width: 901px) {
+    #logo-defesa-civil {
+        max-width: 100%;
+    }
+
+    .alert-container h1 {
+        font-size: 2rem;
+        margin: 0px 0 35px
+    }
+
+    .alert-container {
+        padding: 45px;
+        font-size: 16px;
+        max-width: 65vw;
+        margin: auto;
+    }
+
+    .alert-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 4px solid #1976d2;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .step-number {
+        background-color: rgb(25, 74, 210);
+        color: #fff;
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .step-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .step-content p.step-title {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .step-content p {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+
+    .icon-text-wrapper {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .icon-text {
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+    }
+
+    .icon img {
+        max-width: 80px;
+        box-shadow: none;
+    }
+
+    .icon-text img {
+        max-width: 180px;
+        box-shadow: none;
+    }
+
+    .icon-text span {
+        font-size: 1rem;
+    }
+
+    p#instruction-text {
+        font-weight: 700;
+        font-size: 2.2vw;
+        width: 100%;
+        margin: 35px 0px 0px;
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        /* Garante que o container ocupe 100% da largura disponível */
+    }
+
+    .input-container input {
+        width: 60%;
+        margin-right: 2%;
+        /* Espaçamento entre o input e o botão */
+        box-sizing: border-box;
+        /* Inclui padding e border na largura total */
+    }
+
+    .input-container button {
+        width: 38%;
+        padding: 20px 0;
+        box-sizing: border-box;
+        /* Inclui padding e border na largura total */
+        margin-bottom: 1vw;
+    }
+
+    .input-container input.focused+label,
+    .input-container input:focus+label,
+    .input-container input:not(:placeholder-shown)+label {
+        top: 30%;
+        left: 23px;
+        font-size: 1.2rem;
+    }
+
+    footer>p {
+        font-size: larger;
+    }
 }
