@@ -54,34 +54,20 @@
                 <div class="alert-step step-3">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <p>Outras mensagens por SMS para <strong>40199</strong>:</p>
-                        <ul>
-                            <li>
-                                <div class="icon-text">
-                                    <img src="imgs/step3_icon.png" alt="Ícone de mensagens">
-                                    <span><strong>CONSULTAR</strong> para consultar CEPs cadastrados.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon-text">
-                                    <img src="imgs/step4_icon.png" alt="Ícone de mensagens">
-                                    <span><strong>SAIR [CEP]</strong> para parar de receber alertas de um CEP.</span>
-                                </div>
-                            </li>
-                        </ul>
+                        <p class="step-title">Outras mensagens por SMS para <strong>40199</strong>:</p>
+                        <div class="icon-text-wrapper">
+                            <div class="icon-text">
+                                <img src="imgs/step3_icon.png" alt="Ícone de mensagens">
+                                <span><strong>CONSULTAR</strong> para consultar CEPs cadastrados.</span>
+                            </div>
+                            <div class="icon-text">
+                                <img src="imgs/step4_icon.png" alt="Ícone de mensagens">
+                                <span><strong>SAIR [CEP]</strong> para parar de receber alertas de um CEP.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- <img src="imgs/sms_alerta_9_por_16.png" id="instruction-image" alt="Cadastrar-se para receber alertas por SMS: 
-            1. Envie um SMS para 40199 com o CEP da área que deseja monitorar, seja da sua casa ou outro local. 
-            2. Você receberá uma mensagem confirmando que o cadastro foi realizado. 
-            3. Outras mensagens por SMS para 40199: 
-               - Envie 'CONSULTAR' para consultar os CEPs cadastrados. 
-               - Envie 'SAIR [CEP]' para parar de receber alertas de um CEP." onclick="showStepContent(1)"
-                onkeypress="showStepContent(1)"
-                aria-label="Imagem com instruções de envio de SMS para cadastro de alertas."> -->
-
         </section>
 
         <p id="instruction-text">Digite seu CEP e clique em 'Receber Alertas' para enviar o SMS.</p>
@@ -90,9 +76,9 @@
             <input type="text" id="cep" maxlength="9" aria-label="Campo para digitar o CEP"
                 placeholder="Digite seu CEP aqui">
             <label for="cep" id="cep-label">CEP</label>
+            <button onclick="redirectToSMS()" aria-label="Clique para receber alertas" tabindex="0">Receber Alertas</button>
         </div>
 
-        <button onclick="redirectToSMS()" aria-label="Clique para receber alertas" tabindex="0">Receber Alertas</button>
     </main>
 
     <!-- Ferramentas de acessibilidade e modo escuro -->
