@@ -52,14 +52,13 @@ main {
 
 p {
     font-weight: 700;
-    font-size: 5vw;
+    font-size: 4.8vw;
     width: 100%;
-    margin: 20px 0px;
+    margin: 15px 0;
 }
 
 input,
-button,
-img {
+button {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -92,22 +91,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-img {
-    margin-top: 10px;
-    width: 90%;
-    max-width: 90%;
-    height: auto;
-    box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.7s ease-in-out;
-}
-
-img.enlarged {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
 
 /* Input Container Styles */
 .input-container {
@@ -178,43 +161,10 @@ button#dark-mode-toggle {
     border: none;
     font-size: 2.1rem;
     cursor: pointer;
-    margin: 100px 7px 0px;
+    margin: 100px 8px 0px;
 }
 
-/* VLibras Button Position */
-div[vw] {
-    position: relative;
-    z-index: 2147483647;
-}
 
-[vw-access-button] {
-    height: 47px !important;
-    /* Garantir a altura desejada */
-    transition: all .4s ease !important;
-}
-
-[vw-access-button]:hover {
-    height: 51px !important;
-    /* Garantir a altura desejada */
-}
-
-[vw-access-button] img {
-    height: 100%;
-    /* Garante que ambas as imagens mantenham a altura correta */
-    width: auto;
-    /* Mantém a proporção das imagens */
-    margin-right: 5px;
-    /* Espaçamento entre as imagens, ajuste conforme necessário */
-}
-
-[vw-access-button] .pop-up {
-    display: inline-block;
-    height: 100%;
-    /* Garante que a segunda imagem também mantenha a altura correta */
-    width: auto;
-    left: -5px !important;
-    position: relative !important;
-}
 
 /* Footer Styles */
 footer>p {
@@ -226,23 +176,9 @@ footer>p {
     z-index: 99 !important;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;
-    color: #f0f0f5;
-}
-
-body.dark-mode header {
-    background-color: #0000;
-}
-
-body.dark-mode button#dark-mode-toggle {
-    color: #f0f0f5;
-}
-
 /* ESTILOS PARA AS DIVS QUE SUBSTITUIRÃO A IMAGEM GUIA DE CADASTRO */
 .alert-container {
-    background-color: #f57c00;
+    background-color: #ffffff00;
     padding: 20px;
     border-radius: 10px;
     color: #fff;
@@ -252,8 +188,8 @@ body.dark-mode button#dark-mode-toggle {
 
 .alert-container h1 {
     font-size: 1.1rem;
-    margin: 5px 0 25px;
-    color: #fff;
+    margin: -5px 0 30px;
+    color: #000000;
 }
 
 .alert-step {
@@ -297,7 +233,7 @@ body.dark-mode button#dark-mode-toggle {
 }
 
 .step-content p {
-    margin: 0;
+    margin: 5px 0;
     font-size: 1rem;
     text-align: center;
 }
@@ -323,6 +259,10 @@ body.dark-mode button#dark-mode-toggle {
     border-radius: 5px;
 }
 
+.icon img:hover {
+    transform: scale(1.05); /* Aplica um leve aumento no tamanho ao passar o mouse */
+}
+
 .icon-text {
     display: flex;
     align-items: center;
@@ -335,6 +275,74 @@ body.dark-mode button#dark-mode-toggle {
     height: auto;
 }
 
+.icon-text img:hover {
+    transform: scale(1.05); /* Aplica um leve aumento no tamanho ao passar o mouse */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Cor de fundo mais escura */
+    color: #e0e0e0; /* Texto em cor clara para contraste */
+}
+
+body.dark-mode header {
+    background-color: transparent; /* Fundo do cabeçalho mais escuro */
+}
+
+body.dark-mode h1 {
+    color: #e0e0e0; /* Ícone de alternância de cor clara */
+}
+
+body.dark-mode button#dark-mode-toggle {
+    color: #e0e0e0; /* Ícone de alternância de cor clara */
+}
+
+body.dark-mode .alert-step {
+    background-color: #1c1c1c; /* Fundo dos passos no modo escuro */
+    color: #e0e0e0; /* Texto claro */
+    border-color: #2980b9; /* Cor de borda para combinar com o modo escuro */
+}
+
+body.dark-mode .step-number {
+    background-color: #2980b9; /* Número dos passos com cor clara */
+}
+
+body.dark-mode .icon img {
+    filter: brightness(1.1); /* Escurece os ícones para o modo escuro */
+}
+
+body.dark-mode .icon-text-wrapper .icon-text:nth-child(1) img {
+    content: url('../imgs/step3_icon_modo_escuro.png'); /* Trocar pelo caminho correto */
+}
+
+body.dark-mode .icon-text-wrapper .icon-text:nth-child(2) img {
+    content: url('../imgs/step4_icon_modo_escuro.png'); /* Trocar pelo caminho correto */
+}
+
+body.dark-mode .input-container input {
+    background-color: #1c1c1c; /* Fundo do input no modo escuro */
+    color: #e0e0e0; /* Texto claro no input */
+    border-color: #2980b9; /* Cor da borda para combinar com o modo escuro */
+}
+
+body.dark-mode .input-container label {
+    color: #a0a0a0; /* Cor da label no modo escuro */
+}
+
+body.dark-mode button {
+    background-color: #2980b9; /* Botão com cor clara */
+    color: #e0e0e0; /* Texto claro no botão */
+}
+
+body.dark-mode button:hover {
+    background-color: #1a6ea9; /* Cor mais escura ao passar o mouse no botão */
+}
+
+body.dark-mode footer > p {
+    color: #a0a0a0; /* Cor do texto do rodapé no modo escuro */
+}
+
+
 /* Media queries para dispositivos pequenos (telefones) */
 @media (max-width: 600px) {
     .alert-container {
@@ -344,6 +352,10 @@ body.dark-mode button#dark-mode-toggle {
 
     .alert-step {
         padding: 15px;
+    }
+
+    .step-3 > .step-content > .step-title {
+        margin-bottom: 10px;
     }
 
     .step-number {
@@ -360,6 +372,7 @@ body.dark-mode button#dark-mode-toggle {
     .icon img {
         max-width: 45px;
         box-shadow: none;
+        margin-top: 5px;
     }
 
     .icon-text img {
@@ -370,6 +383,12 @@ body.dark-mode button#dark-mode-toggle {
 
 /* Media queries para dispositivos médios (tablets) */
 @media (min-width: 601px) and (max-width: 900px) {
+    .alert-container h1 {
+        font-size: 1.3rem;
+        margin: -5px 0 35px;
+        color: #000000;
+    }
+
     .alert-container {
         padding: 25px;
         font-size: 16px;
@@ -399,7 +418,7 @@ body.dark-mode button#dark-mode-toggle {
     }
 
     .step-content p.step-title {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         font-size: 1.2rem;
         font-weight: bold;
     }
@@ -433,21 +452,21 @@ body.dark-mode button#dark-mode-toggle {
     }
 
     .icon-text span {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     p#instruction-text {
         font-weight: 700;
-        font-size: 2vw;
+        font-size: 2.6vw;
         width: 100%;
-        margin: 30px 0 20px;
+        margin: 20px 0 20px;
     }
 
     .input-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: 95%;
     }
 
     .input-container input {
@@ -485,7 +504,7 @@ body.dark-mode button#dark-mode-toggle {
 
     .alert-container h1 {
         font-size: 2rem;
-        margin: 0px 0 35px
+        margin: -20px 0 45px;
     }
 
     .alert-container {
@@ -566,21 +585,21 @@ body.dark-mode button#dark-mode-toggle {
     }
 
     .icon-text span {
-        font-size: 1rem;
+        font-size: 15px;
     }
 
     p#instruction-text {
         font-weight: 700;
-        font-size: 2.2vw;
+        font-size: 2.1vw;
         width: 100%;
-        margin: 35px 0px 0px;
+        margin: 10px 0px 0px;
     }
 
     .input-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: 80%;
         /* Garante que o container ocupe 100% da largura disponível */
     }
 
