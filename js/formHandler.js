@@ -12,40 +12,75 @@ function formatCEP(value) {
     return value;
 }
 
-// Função que redireciona o usuário para o aplicativo de SMS com o CEP pré-preenchido
-function redirectToSMS() {
+// Função para verificar se o CEP é válido usando a API ViaCEP
+async function isValidCEP(cep) {
+    try {
+        let response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        let data = await response.json();
+        return !data.erro; // Retorna verdadeiro se não houver erro na resposta
+    } catch (error) {
+        console.error('Erro ao verificar o CEP:', error);
+        return false;
+    }
+}
+
+// Modificando a função redirectToSMS para incluir a verificação de CEP
+async function redirectToSMS() {
     var cep = document.getElementById('cep').value;
     var darkModeToggle = document.getElementById('dark-mode-toggle'); // Referência ao botão de modo escuro/claro
 
     // Esconder o botão de modo escuro/claro
     darkModeToggle.style.display = 'none';
 
+    // Verifica se o CEP tem o formato correto
     if (cep && cep.length === 9) {
-        Swal.fire({
-            title: 'Mensagem Preparada!',
-            html: "Por favor, toque no botão com o ícone de '<i class='fa-regular fa-paper-plane'></i>' no app de mensagens para enviar o CEP.",
-            icon: 'info',
-            confirmButtonText: 'OK',
-            customClass: {
-                popup: 'swal2-popup',
-                title: 'swal2-title',
-                htmlContainer: 'swal2-html-container',
-                confirmButton: 'swal2-confirm',
-                icon: 'swal2-icon'
-            }
-        }).then(() => {
-            // Redireciona para o aplicativo de mensagens com o CEP como conteúdo do SMS
-            window.location.href = "sms:40199?body=" + encodeURIComponent(cep);
+        // Verifica se o CEP é válido usando a API ViaCEP
+        if (await isValidCEP(cep)) {
+            Swal.fire({
+                title: 'Mensagem Preparada!',
+                html: "Por favor, toque no botão com o ícone de '<i class='fa-regular fa-paper-plane'></i>' no app de mensagens para enviar o CEP.",
+                icon: 'info',
+                confirmButtonText: 'OK',
+                customClass: {
+                    popup: 'swal2-popup',
+                    title: 'swal2-title',
+                    htmlContainer: 'swal2-html-container',
+                    confirmButton: 'swal2-confirm',
+                    icon: 'swal2-icon'
+                }
+            }).then(() => {
+                // Redireciona para o aplicativo de mensagens com o CEP como conteúdo do SMS
+                window.location.href = "sms:40199?body=" + encodeURIComponent(cep);
 
-            // Mostrar o botão de modo escuro/claro novamente após a confirmação
-            darkModeToggle.style.display = 'block';
-        });
+                // Mostrar o botão de modo escuro/claro novamente após a confirmação
+                darkModeToggle.style.display = 'block';
+            });
+        } else {
+            // CEP no formato correto, mas não encontrado (não é válido)
+            Swal.fire({
+                title: 'CEP não encontrado!',
+                html: "O CEP que você digitou está no formato correto, mas não foi encontrado.<br>Por favor, verifique se o CEP está correto ou tente outro.",
+                icon: 'error',
+                confirmButtonText: 'Tente Outro CEP',
+                customClass: {
+                    popup: 'swal2-popup',
+                    title: 'swal2-title',
+                    htmlContainer: 'swal2-html-container',
+                    confirmButton: 'swal2-confirm',
+                    icon: 'swal2-icon'
+                }
+            }).then(() => {
+                // Mostrar o botão de modo escuro/claro novamente após o erro
+                darkModeToggle.style.display = 'block';
+            });
+        }
     } else {
+        // CEP com formato incorreto
         Swal.fire({
-            title: 'CEP inválido!',
-            html: "Por favor, insira um CEP válido no formato <strong>XXXXX-XXX</strong>. <br>Exemplo: <strong>12345-678</strong>",
+            title: 'Formato de CEP não válido!',
+            html: "Por favor, insira um CEP no formato: <br><strong>XXXXX-XXX</strong> <br>Exemplo: <strong>12345-678</strong>",
             icon: 'error',
-            confirmButtonText: 'Tentar Novamente',
+            confirmButtonText: 'Tente Novamente',
             customClass: {
                 popup: 'swal2-popup',
                 title: 'swal2-title',
