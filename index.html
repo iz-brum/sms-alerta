@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="imgs/favicon_io/site.webmanifest">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Enviar CEP via SMS</title>
+
 </head>
 
 <body>
     <!-- Cabeçalho da página -->
     <header>
-        <img src="https://www.defesacivil.mt.gov.br/image/layout_set_logo?img_id=51588650&t=1724323582003"
-            alt="Logo Defesa Civil Do Mato Grosso" id="logo-defesa-civil"
-            aria-label="Logo da Defesa Civil de Mato Grosso com texto 'Proteção e Defesa Civil' ao lado">
         <p id="screen-reader-info" class="sr-only">
             Esta página é acessível para usuários de leitores de tela. Use os controles de navegação do seu dispositivo
             para explorar as opções.
@@ -76,7 +78,8 @@
             <input type="text" id="cep" maxlength="9" aria-label="Campo para digitar o CEP"
                 placeholder="Digite seu CEP aqui">
             <label for="cep" id="cep-label">CEP</label>
-            <button onclick="redirectToSMS()" aria-label="Clique para receber alertas" tabindex="0">Receber Alertas</button>
+            <button onclick="redirectToSMS()" aria-label="Clique para receber alertas" tabindex="0">Receber
+                Alertas</button>
         </div>
 
     </main>
