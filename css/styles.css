@@ -251,6 +251,7 @@ footer>p {
 
 .icon {
     text-align: center;
+    margin-top: 10px;
 }
 
 .icon img {
@@ -298,7 +299,7 @@ body.dark-mode button#dark-mode-toggle {
 }
 
 body.dark-mode .alert-step {
-    background-color: #1c1c1c; /* Fundo dos passos no modo escuro */
+    background-color: #333333; /* Fundo dos passos no modo escuro */
     color: #e0e0e0; /* Texto claro */
     border-color: #2980b9; /* Cor de borda para combinar com o modo escuro */
 }
@@ -320,7 +321,7 @@ body.dark-mode .icon-text-wrapper .icon-text:nth-child(2) img {
 }
 
 body.dark-mode .input-container input {
-    background-color: #1c1c1c; /* Fundo do input no modo escuro */
+    background-color: #333333; /* Fundo do input no modo escuro */
     color: #e0e0e0; /* Texto claro no input */
     border-color: #2980b9; /* Cor da borda para combinar com o modo escuro */
 }
@@ -466,7 +467,7 @@ body.dark-mode footer > p {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 95%;
+        width: 90%;
     }
 
     .input-container input {
