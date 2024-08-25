@@ -1,6 +1,7 @@
 # SMS-Alerta
 
-![license](https://img.shields.io/badge/license-MIT-green) ![HTML5](https://img.shields.io/badge/HTML5-Utilizado-orange) ![CSS3](https://img.shields.io/badge/CSS3-Utilizado-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-Utilizado-yellow) ![Mobile-Friendly](https://img.shields.io/badge/Mobile%20Friendly-100%25-brightgreen) ![Responsive Design](https://img.shields.io/badge/Responsive%20Design-50%25-brightgreen) ![GitHub](https://img.shields.io/badge/GitHub-Repository-blue) ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)
+![license](https://img.shields.io/badge/license-MIT-green) ![HTML5](https://img.shields.io/badge/HTML5-Utilizado-orange) ![CSS3](https://img.shields.io/badge/CSS3-Utilizado-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-Utilizado-yellow) ![Mobile-Friendly](https://img.shields.io/badge/Mobile%20Friendly-100%25-brightgreen) ![Responsive Design](https://img.shields.io/badge/Responsive%20Design-100%25-brightgreen) ![GitHub](https://img.shields.io/badge/GitHub-Repository-blue) ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen) ![VLibras](https://img.shields.io/badge/VLibras-Utilizado-brightgreen)
+
 
 Este projeto é uma página web simples e intuitiva que facilita o envio de SMS para o sistema de alertas da Defesa Civil. A página direciona o usuário ao aplicativo de mensagens SMS com o número de destinatário e o texto da mensagem já configurados, além de fornecer orientações visuais sobre como proceder.
 
