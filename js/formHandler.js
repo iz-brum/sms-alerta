@@ -38,7 +38,7 @@ async function redirectToSMS() {
         if (await isValidCEP(cep)) {
             Swal.fire({
                 title: 'Mensagem Preparada!',
-                html: "Por favor, toque no botão com o ícone de '<i class='fa-regular fa-paper-plane'></i>' no app de mensagens para enviar o CEP.",
+                html: "Por favor, ao ser redirecionado para seu aplicativo de mensagens, toque no botão com o ícone de <i class=\"fa-regular fa-paper-plane\"></i> (avião de papel), para enviar o CEP.",
                 icon: 'info',
                 confirmButtonText: 'OK',
                 customClass: {
