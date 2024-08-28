@@ -261,7 +261,8 @@ footer>p {
 }
 
 .icon img:hover {
-    transform: scale(1.05); /* Aplica um leve aumento no tamanho ao passar o mouse */
+    transform: scale(1.05);
+    /* Aplica um leve aumento no tamanho ao passar o mouse */
 }
 
 .icon-text {
@@ -271,81 +272,177 @@ footer>p {
 }
 
 .icon-text img {
-    margin-right: 10px;
+    margin-left: -14px;
     max-width: 70px;
     height: auto;
 }
 
 .icon-text img:hover {
-    transform: scale(1.05); /* Aplica um leve aumento no tamanho ao passar o mouse */
+    transform: scale(1.05);
+    /* Aplica um leve aumento no tamanho ao passar o mouse */
 }
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #121212; /* Cor de fundo mais escura */
-    color: #e0e0e0; /* Texto em cor clara para contraste */
+    background-color: #121212;
+    /* Cor de fundo mais escura */
+    color: #e0e0e0;
+    /* Texto em cor clara para contraste */
 }
 
 body.dark-mode header {
-    background-color: transparent; /* Fundo do cabeçalho mais escuro */
+    background-color: transparent;
+    /* Fundo do cabeçalho mais escuro */
 }
 
 body.dark-mode h1 {
-    color: #e0e0e0; /* Ícone de alternância de cor clara */
+    color: #e0e0e0;
+    /* Ícone de alternância de cor clara */
 }
 
 body.dark-mode button#dark-mode-toggle {
-    color: #e0e0e0; /* Ícone de alternância de cor clara */
+    color: #e0e0e0;
+    /* Ícone de alternância de cor clara */
 }
 
 body.dark-mode .alert-step {
-    background-color: #333333; /* Fundo dos passos no modo escuro */
-    color: #e0e0e0; /* Texto claro */
-    border-color: #2980b9; /* Cor de borda para combinar com o modo escuro */
+    background-color: #333333;
+    /* Fundo dos passos no modo escuro */
+    color: #e0e0e0;
+    /* Texto claro */
+    border-color: #2980b9;
+    /* Cor de borda para combinar com o modo escuro */
 }
 
 body.dark-mode .step-number {
-    background-color: #2980b9; /* Número dos passos com cor clara */
+    background-color: #2980b9;
+    /* Número dos passos com cor clara */
 }
 
 body.dark-mode .icon img {
-    filter: brightness(1.1); /* Escurece os ícones para o modo escuro */
+    filter: brightness(1.1);
+    /* Escurece os ícones para o modo escuro */
 }
 
 body.dark-mode .icon-text-wrapper .icon-text:nth-child(1) img {
-    content: url('../imgs/step3_icon_modo_escuro.png'); /* Trocar pelo caminho correto */
+    content: url('../imgs/step3_icon_modo_escuro.png');
+    /* Trocar pelo caminho correto */
 }
 
 body.dark-mode .icon-text-wrapper .icon-text:nth-child(2) img {
-    content: url('../imgs/step4_icon_modo_escuro.png'); /* Trocar pelo caminho correto */
+    content: url('../imgs/step4_icon_modo_escuro.png');
+    /* Trocar pelo caminho correto */
 }
 
 body.dark-mode .input-container input {
-    background-color: #333333; /* Fundo do input no modo escuro */
-    color: #e0e0e0; /* Texto claro no input */
-    border-color: #2980b9; /* Cor da borda para combinar com o modo escuro */
+    background-color: #333333;
+    /* Fundo do input no modo escuro */
+    color: #e0e0e0;
+    /* Texto claro no input */
+    border-color: #2980b9;
+    /* Cor da borda para combinar com o modo escuro */
 }
 
 body.dark-mode .input-container label {
-    color: #a0a0a0; /* Cor da label no modo escuro */
+    color: #a0a0a0;
+    /* Cor da label no modo escuro */
 }
 
 body.dark-mode button {
-    background-color: #2980b9; /* Botão com cor clara */
-    color: #e0e0e0; /* Texto claro no botão */
+    background-color: #2980b9;
+    /* Botão com cor clara */
+    color: #e0e0e0;
+    /* Texto claro no botão */
 }
 
 body.dark-mode button:hover {
-    background-color: #1a6ea9; /* Cor mais escura ao passar o mouse no botão */
+    background-color: #1a6ea9;
+    /* Cor mais escura ao passar o mouse no botão */
 }
 
-body.dark-mode footer > p {
-    color: #a0a0a0; /* Cor do texto do rodapé no modo escuro */
+body.dark-mode footer>p {
+    color: #a0a0a0;
+    /* Cor do texto do rodapé no modo escuro */
 }
 
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0073a8;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    /* Adiciona margem inferior */
+    border-radius: 10px;
+    /* Adiciona bordas arredondadas */
+}
+
+.feature-item {
+    text-align: center;
+    color: #fff;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.feature-item p {
+    font-size: 10px;
+    margin: 0;
+}
 
 /* Media queries para dispositivos pequenos (telefones) */
 @media (max-width: 600px) {
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas de largura igual */
+        grid-gap: 10px; /* Espaçamento entre as colunas */
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .feature-item {
+        padding: 10px;
+    }
+
+    .feature-item i {
+        font-size: 2rem;
+    }
+
+    .feature-item p {
+        font-size: 14px;
+        margin: 5px 0 0 0;
+    }
+
+    .alert-container h1 {
+        font-size: 1.3rem;
+        margin: 0 0 25px;
+    }
+
+    .alert-container {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .alert-step {
+        padding: 15px;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        top: -15px;
+        left: -10px;
+    }
+
+    .step-content {
+        margin: 0 0 0 10px;
+        font-size: 0.9rem;
+    }
+
     .alert-container {
         padding: 15px;
         font-size: 14px;
@@ -355,7 +452,7 @@ body.dark-mode footer > p {
         padding: 15px;
     }
 
-    .step-3 > .step-content > .step-title {
+    .step-3>.step-content>.step-title {
         margin-bottom: 10px;
     }
 
@@ -371,21 +468,77 @@ body.dark-mode footer > p {
     }
 
     .icon img {
-        max-width: 45px;
+        max-width: 55px;
         box-shadow: none;
         margin-top: 5px;
     }
 
     .icon-text img {
-        max-width: 65px;
+        max-width: 75px;
         box-shadow: none;
     }
 }
 
 /* Media queries para dispositivos médios (tablets) */
 @media (min-width: 601px) and (max-width: 900px) {
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas de largura igual */
+        grid-gap: 10px; /* Espaçamento entre as colunas */
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .feature-item {
+        padding: 10px;
+    }
+
+    .feature-item i {
+        font-size: 2.5rem;
+    }
+
+    .feature-item p {
+        font-size: 18px;
+        margin: 0;
+    }
+
     .alert-container h1 {
+        font-size: 1.6rem;
+        margin: -10px 0 40px;
+    }
+
+    .alert-container {
+        padding: 30px;
+        font-size: 15px;
+    }
+
+    .alert-step {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .step-number {
+        width: 35px;
+        height: 35px;
         font-size: 1.3rem;
+        top: -18px;
+        left: -12px;
+    }
+
+    .step-content {
+        font-size: 1rem;
+    }
+
+    .icon img {
+        max-width: 60px;
+    }
+
+    .icon-text img {
+        max-width: 70px;
+    }
+
+    .alert-container h1 {
+        font-size: 2.1rem;
         margin: -5px 0 35px;
         color: #000000;
     }
@@ -420,17 +573,17 @@ body.dark-mode footer > p {
 
     .step-content p.step-title {
         margin-bottom: 20px;
-        font-size: 1.2rem;
+        font-size: 22px;
         font-weight: bold;
     }
 
     .step-content p {
         margin: 0;
-        font-size: 1.1rem;
+        font-size: 22px;
     }
 
     .icon img {
-        max-width: 65px;
+        max-width: 75px;
         box-shadow: none;
     }
 
@@ -448,7 +601,7 @@ body.dark-mode footer > p {
 
     .icon-text img {
         max-width: 100px;
-        margin-right: 10px;
+        margin-left: -20px;
         box-shadow: none;
     }
 
@@ -499,8 +652,55 @@ body.dark-mode footer > p {
 
 /* Media queries para dispositivos grandes (laptops e desktops) */
 @media (min-width: 901px) {
-    #logo-defesa-civil {
-        max-width: 100%;
+    .features-container {
+        padding: 20px 0;
+        margin-bottom: 40px;
+        border-radius: 10px;
+    }
+
+    .feature-item i {
+        font-size: 3rem;
+    }
+
+    .feature-item p {
+        font-size: 18px;
+    }
+
+    .alert-container h1 {
+        font-size: 2rem;
+        margin: -20px 0 45px;
+    }
+
+    .alert-container {
+        padding: 45px;
+        font-size: 16px;
+        max-width: 65vw;
+        margin: auto;
+    }
+
+    .alert-step {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        top: -20px;
+        left: -15px;
+    }
+
+    .step-content {
+        font-size: 1.4rem;
+    }
+
+    .icon img {
+        max-width: 80px;
+    }
+
+    .icon-text img {
+        max-width: 100px;
     }
 
     .alert-container h1 {
@@ -540,7 +740,7 @@ body.dark-mode footer > p {
         border-radius: 50%;
         position: absolute;
         top: -20px;
-        left: -10px;
+        left: -15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -552,6 +752,10 @@ body.dark-mode footer > p {
         text-align: center;
     }
 
+    .step-3>.step-content {
+        margin: 5px 0 0 0;
+    }
+
     .step-content p.step-title {
         margin-bottom: 20px;
         font-size: 1.4rem;
@@ -561,7 +765,10 @@ body.dark-mode footer > p {
     .step-content p {
         margin: 0;
         font-size: 1.4rem;
+        padding: 0 10px;
+        /* Ajuste a margem interna para aumentar o espaço */
     }
+
 
     .icon-text-wrapper {
         display: flex;
@@ -576,7 +783,7 @@ body.dark-mode footer > p {
     }
 
     .icon img {
-        max-width: 80px;
+        max-width: 90px;
         box-shadow: none;
     }
 
@@ -586,7 +793,7 @@ body.dark-mode footer > p {
     }
 
     .icon-text span {
-        font-size: 15px;
+        font-size: 19px;
     }
 
     p#instruction-text {
